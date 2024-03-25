@@ -11,6 +11,7 @@ body{
     align-items: center;
     justify-content: center;
     background-color: black;
+    overflow: hidden;
 }
 .greetings{
     font-size: 6rem;
