@@ -25,7 +25,7 @@ The Flower Animation project aims to create an interactive and visually appealin
 
 ## Screenshot
 
-[img](./img/image.png)
+![img](./img/image.png)
 
 ## Installation
 
@@ -56,3 +56,14 @@ Once you've installed the project locally or accessed the live demo, you can int
 ## License
 
 The Flower Animation project is licensed under the [MIT](LICENSE) License.
+
+---
+
+<div align="center">
+
+   ![repo size](https://img.shields.io/github/repo-size/gmpsankalpa/Flower-animation?label=Repo%20Size&style=for-the-badge&labelColor=black&color=20bf6b)
+   ![GitHub forks](https://img.shields.io/github/forks/gmpsankalpa/Flower-animation?&labelColor=black&color=0fb9b1&style=for-the-badge)
+   ![GitHub stars](https://img.shields.io/github/stars/gmpsankalpa/Flower-animation?&labelColor=black&color=f7b731&style=for-the-badge)
+   ![GitHub LastCommit](https://img.shields.io/github/last-commit/gmpsankalpa/Flower-animation?logo=github&labelColor=black&color=d1d8e0&style=for-the-badge)
+
+</div>
