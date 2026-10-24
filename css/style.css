@@ -1,101 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
-*{
-    font-family: 'Poppins',cursive;
-}
-body{
-    color: azure;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-    overflow: hidden;
-}
-.greetings{
-    font-size: 6rem;
-    font-weight: 900;
-}
-.greetings > span{
-    animation: glow 2.5s ease-in-out infinite;
-}
-@keyframes glow{
-    0%, 100%{
-        color: #fff;
-        text-shadow: 0 0 12px #fbff00, 0 0 50px #fbff00, 0 0 100px #fbff00;
-    }
-    10%, 90%{
-        color: #696565;
-        text-shadow: none;
-    }
-}
-.greetings > span:nth-child(2){
-    animation-delay: .2s ;
-}
-.greetings > span:nth-child(3){
-    animation-delay: .4s ;
-}
-.greetings > span:nth-child(4){
-    animation-delay: .6s;
-}
-.greetings > span:nth-child(5){
-    animation-delay: .8s;
-}
+@import url('./petals.css');
 
-.description{
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+:root {
+  color-scheme: dark;
+  --background: #100e14;
+  --cream: #f8eee7;
+  --pink: #ecb4c4;
+  --muted: #b5a3ae;
 }
-
-.button a{
-    text-decoration: none;
-    font-size: 1rem;
-    color: #111;
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--background);
+  color: var(--cream);
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
 }
-
-@media screen and (max-width:574px){
-    .greetings{
-        display: block;
-        font-size: 3rem;
-        font-weight: 500;
-        text-align: center;
-    }
-    .description{
-        font-size: 1rem;
-    }
-    
-    .button a{
-        font-size: .5rem;
-    }
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 55%, #4a26333d, transparent 60%),
+    radial-gradient(ellipse at 5% 95%, #67405330, transparent 45%),
+    radial-gradient(ellipse at 95% 5%, #44334725, transparent 40%);
 }
-
-.description{
-    color: #fbff00;
+.site-note, footer { text-align: center; font-size: 10px; letter-spacing: .22em; color: var(--muted); }
+.site-note { padding: 35px 20px; }
+.tiny-flower { display: inline-block; color: var(--pink); font-size: 21px; vertical-align: middle; margin-right: 10px; }
+main { flex: 1; display: grid; place-items: center; padding: 42px 24px; }
+.screen { width: min(100%, 740px); text-align: center; animation: arrive .7s ease both; }
+.eyebrow { color: var(--pink); font-size: 10px; letter-spacing: .25em; line-height: 1.8; margin: 0 0 26px; }
+h1 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(76px, 12vw, 144px); font-weight: 400; letter-spacing: -.065em; line-height: 1.05; margin: 0; }
+h1 em { color: var(--pink); font-weight: 400; }
+.subtitle { margin: 28px 0 38px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font-family: inherit; }
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 45px;
+  border: 1px solid #f6ccd3;
+  border-radius: 999px;
+  padding: 17px 27px;
+  background: #ebbbca;
+  color: #291c25;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background .2s, transform .2s, box-shadow .2s;
 }
-
-/* Estilo para el botón */
-.button button {
-    background-color: yellow; /* Fondo amarillo */
-    border: none; /* Sin bordes */
-    padding: 10px 20px; /* Ajusta el relleno según tu preferencia */
-    font-size: 18px; /* Tamaño de fuente */
-    cursor: pointer;
-    position: relative; /* Necesario para el resplandor */
-    border-radius: 20px; /* Esquinas redondeadas */
-    transition: background-color 0.3s ease-in-out; /* Transición suave para el color de fondo */
-  }
-  
-  /* Estilo para el enlace dentro del botón */
-  .button button a {
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    color: inherit; /* Hereda el color del texto del botón */
-  }
-  
-  /* Efecto de resplandor al pasar el cursor sobre el botón */
-  .button button:hover {
-    background-color: orange; /* Cambia el color de fondo al pasar el mouse a naranja */
-    box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow; /* Efecto de resplandor amarillo */
-  }
-  
-  
+.primary-button:hover { background: #f9d5df; transform: translateY(-2px); box-shadow: 0 8px 35px #d28fa521; }
+.primary-button span { font-size: 20px; }
+:focus-visible { outline: 2px solid #ffe1ec; outline-offset: 6px; }
+h1:focus { outline: none; }
+.footnote { margin: 25px 0 0; font-family: Georgia, serif; font-size: 14px; font-style: italic; color: #a58a99; }
+footer { padding: 28px 20px; line-height: 1.8; font-size: 9px; }
+footer span { color: var(--pink); margin: 0 8px; font-size: 14px; }
+.question-title { font-size: clamp(46px, 7.5vw, 83px); line-height: 1.1; letter-spacing: -.05em; }
+.choices { display: grid; gap: 12px; max-width: 360px; margin: 0 auto; }
+.choice {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 20px;
+  border: 1px solid #72546366;
+  border-radius: 12px;
+  color: var(--cream);
+  background: #e6b5c505;
+  text-decoration: none;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  transition: border-color .2s, background .2s, transform .2s;
+}
+.choice:hover { border-color: var(--pink); background: #e6b5c512; transform: translateX(3px); }
+.choice-letter { color: #c49caa; font-size: 10px; border: 1px solid #72546388; border-radius: 50%; width: 25px; height: 25px; display: grid; place-items: center; }
+.choice-arrow { margin-left: auto; color: var(--pink); }
+dialog { width: min(390px, calc(100% - 40px)); padding: 36px 26px; color: var(--cream); background: #211920; border: 1px solid #a476894d; border-radius: 22px; text-align: center; box-shadow: 0 25px 100px #0008; }
+dialog::backdrop { background: #08070bbd; backdrop-filter: blur(8px); }
+.dialog-flower { color: var(--pink); font-size: 38px; }
+dialog h2 { font-family: Georgia, serif; font-weight: 400; font-size: 29px; margin: 20px 0 14px; }
+dialog p { color: var(--muted); font-size: 14px; line-height: 1.6; margin-bottom: 28px; }
+@keyframes arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 480px) {
+  .site-note { padding: 24px 16px; font-size: 8px; }
+  main { padding: 30px 22px; }
+  .eyebrow { font-size: 8px; letter-spacing: .2em; }
+  .subtitle { font-size: 13px; margin: 23px 0 30px; }
+  .choices { max-width: 320px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

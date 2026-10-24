@@ -1,0 +1,21 @@
+.petal-field { position: fixed; inset: 0; overflow: hidden; z-index: -1; pointer-events: none; }
+.falling-petal {
+  position: absolute;
+  top: -12vh;
+  left: var(--left);
+  width: var(--size);
+  height: calc(var(--size) * 1.35);
+  border-radius: 65% 18% 65% 35% / 65% 35% 65% 35%;
+  background: radial-gradient(ellipse at 20% 15%, #f7d2dc, #cf8fa7 55%, #875169);
+  box-shadow: inset 1px 1px 2px #ffedf14d;
+  opacity: 0;
+  animation: petal-fall var(--duration) var(--delay) linear infinite;
+}
+@keyframes petal-fall {
+  0% { transform: translate3d(0, -5vh, 0) rotate(0deg) rotateY(0deg); opacity: 0; }
+  10% { opacity: var(--opacity); }
+  45% { transform: translate3d(var(--drift), 48vh, 0) rotate(145deg) rotateY(130deg); }
+  85% { opacity: var(--opacity); }
+  100% { transform: translate3d(calc(var(--drift) * -.4), 118vh, 0) rotate(300deg) rotateY(240deg); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .petal-field { display: none; } }

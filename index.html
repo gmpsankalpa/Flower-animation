@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" href="./img/flowers.png" type="image/x-icon">
-    <title>Flower Animation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100e14">
+  <title>A little surprise for Jenny</title>
+  <link rel="icon" href="./img/flowers.png" type="image/png">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/greeting.js" defer></script>
 </head>
 <body>
-    <div class="greetings">
-
-        <span>H</span>
-        <span>E</span>
-        <span>L</span>
-        <span>L</span>
-        <span>O</span>
-    </div>
-    <div class="greetings">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <div class="description">
-        <span>I have a special gift for you!</span>
-    </div>
-    <div class="button">
-        <button>
-            <a href="./FLORES.html">Click Me</a>
-        </button>
-        
-    </div>
-
-    <script src="./js/audio.js"></script>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="petal-field" aria-hidden="true"></div>
+  <header class="site-note"><span class="tiny-flower" aria-hidden="true">✳</span> A LITTLE SOMETHING FOR YOU</header>
+  <main>
+    <section id="greeting" class="screen" aria-labelledby="greeting-title">
+      <p class="eyebrow">JUST BECAUSE IT’S YOU</p>
+      <h1 id="greeting-title">Hi <em>Jenny!</em></h1>
+      <p class="subtitle">I made you a little surprise.</p>
+      <button class="primary-button" id="open-question">click here <span aria-hidden="true">↗</span></button>
+      <p class="footnote">a few petals, a little love</p>
+    </section>
+    <section id="question" class="screen" aria-labelledby="question-title" hidden>
+      <p class="eyebrow">FIRST, A VERY IMPORTANT QUESTION</p>
+      <h1 id="question-title" class="question-title" tabindex="-1">Who is the<br>best <em>boyfriend?</em></h1>
+      <p class="subtitle">Take your time. There’s a right answer.</p>
+      <div class="choices" aria-label="Choose the best boyfriend">
+        <a class="choice" href="./FLORES.html"><span class="choice-letter" aria-hidden="true">A</span><span>Aidan</span><span class="choice-arrow" aria-hidden="true">↗</span></a>
+        <a class="choice" href="./FLORES.html"><span class="choice-letter" aria-hidden="true">B</span><span>Aidan</span><span class="choice-arrow" aria-hidden="true">↗</span></a>
+        <button class="choice" id="no-one"><span class="choice-letter" aria-hidden="true">C</span><span>No one</span><span class="choice-arrow" aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+  </main>
+  <footer>MADE WITH LOVE <span aria-hidden="true">♡</span> BY AIDAN</footer>
+  <dialog id="answer-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+    <span class="dialog-flower" aria-hidden="true">✳</span>
+    <h2 id="dialog-title">You can’t choose this.</h2>
+    <p id="dialog-description">Give it another try, Jenny.</p>
+    <form method="dialog"><button class="primary-button" autofocus>OK <span aria-hidden="true">↗</span></button></form>
+  </dialog>
 </body>
 </html>

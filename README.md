@@ -1,69 +1,37 @@
-# Flower Animation
+# Peonies for Jenny
 
-A delightful web animation project showcasing the growth and beauty of flowers through CSS and JavaScript animations.
+A little surprise in three screens: a personal greeting with falling petals, a playful question, and three blush pink peonies blooming among animated grass.
 
+## Preview
 
-## Table of Contents
+Open `index.html` in a browser, or run a local server from this directory:
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Screenshot](#screenshot)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
+```sh
+python3 -m http.server 8077 --bind 127.0.0.1
+```
 
-## Introduction
+Visit http://127.0.0.1:8077. No application dependencies or build step are needed to view the site.
 
-The Flower Animation project aims to create an interactive and visually appealing display of animated flowers using modern web technologies. It demonstrates how CSS and JavaScript can be combined to produce intricate animations that simulate the growth and movement of flowers in a digital environment.
+## Experience
 
-## Features
+- “Hi Jenny!” → **click here** opens the question.
+- Both **Aidan** answers open the garden. **No one** opens a popup; close it with **OK** or Escape to try again.
+- Each peony has 36 petals in four overlapping rings, unfolding from the outside inward. The original grass and foliage grow and sway around them.
+- The experience is silent. Reduced-motion preferences disable falling petals, use gentler petal unfolding, and limit garden movement to one cycle. The grass and flowers still grow into view. Use **Replay bloom** to watch the reveal again.
+- The layout supports phones and desktops. Opening `FLORES.html` directly starts the garden reveal.
 
-- Realistic flower animations including growth, leaf movements, and light effects.
-- Responsive design for seamless viewing across various devices and screen sizes.
-- Interactive elements to engage users and enhance the viewing experience.
-- Customizable styles and animations to suit different preferences and themes.
+## Editing
 
-## Screenshot
+The greeting and questionnaire use `index.html`, `css/style.css`, `css/petals.css`, and `js/greeting.js`. The garden uses `FLORES.html`, `scss/main.scss`, and `js/main.js`.
 
-![img](./img/image.png)
+Garden styles are authored in SCSS. After editing them, regenerate the committed CSS and source map with:
 
-## Installation
+```sh
+npx --yes sass scss/main.scss css/main.css
+```
 
-To run the Flower Animation project locally, follow these steps:
+The petal arrangement and unfolding delays are defined in `js/main.js`. Keep animation transforms on the petals separate from the placement transforms so unfolding preserves the layered bloom.
 
-1. Clone the repository:
+## Credits
 
-    ```bash
-    git clone https://github.com/gmpsankalpa/Flower-animation.git
-
-2. Navigate to the project directory:
-
-    ```bash
-    cd Flower-animation
-
-3. Open the `index.html` file in your web browser.
-
-Alternatively, you can view the live demo [here](https://gmpsankalpa.github.io/Flower-animation/).
-
-## Usage
-
-Once you've installed the project locally or accessed the live demo, you can interact with the flower animation as follows:
-
-- Explore the different types of flowers by observing their growth patterns and movements.
-- Hover over various elements to trigger interactive effects and animations.
-- Experiment with customizations by modifying the CSS styles and JavaScript animations.
-
-## License
-
-The Flower Animation project is licensed under the [MIT](LICENSE) License.
-
----
-
-<div align="center">
-
-   ![repo size](https://img.shields.io/github/repo-size/gmpsankalpa/Flower-animation?label=Repo%20Size&style=for-the-badge&labelColor=black&color=20bf6b)
-   ![GitHub forks](https://img.shields.io/github/forks/gmpsankalpa/Flower-animation?&labelColor=black&color=0fb9b1&style=for-the-badge)
-   ![GitHub stars](https://img.shields.io/github/stars/gmpsankalpa/Flower-animation?&labelColor=black&color=f7b731&style=for-the-badge)
-   ![GitHub LastCommit](https://img.shields.io/github/last-commit/gmpsankalpa/Flower-animation?logo=github&labelColor=black&color=d1d8e0&style=for-the-badge)
-
-</div>
+Adapted from [gmpsankalpa/Flower-animation](https://github.com/gmpsankalpa/Flower-animation). Original grass and foliage animations retained. See [LICENSE](./LICENSE).
